@@ -16,6 +16,7 @@ namespace Opsive.UltimateCharacterController.FirstPersonController.Camera.ViewTy
     using Opsive.UltimateCharacterController.StateSystem;
     using Opsive.UltimateCharacterController.Utility;
     using UnityEngine;
+    using MalbersAnimations.Scriptables;
 
     /// <summary>
     /// The FirstPerson ViewType allows the camera to be placed in a first person perspective.
@@ -44,7 +45,7 @@ namespace Opsive.UltimateCharacterController.FirstPersonController.Camera.ViewTy
         [Tooltip("The culling mask of the camera.")]
         [SerializeField] protected LayerMask m_CullingMask = ~(1 << LayerManager.Overlay);
         [Tooltip("The field of view of the main camera.")]
-        [SerializeField] protected float m_FieldOfView = 70f;
+        [SerializeField] protected FloatReference m_FieldOfView = 70f;
         [Tooltip("The damping time of the field of view angle when changed.")]
         [SerializeField] protected float m_FieldOfViewDamping = 0.2f;
         [Tooltip("Specifies the position offset from the camera that the first person objects should render.")]
@@ -65,7 +66,7 @@ namespace Opsive.UltimateCharacterController.FirstPersonController.Camera.ViewTy
         [Tooltip("Should the first person camera's field of view be synchronized with the main camera?")]
         [SerializeField] protected bool m_SynchronizeFieldOfView = true;
         [Tooltip("Specifies the field of view for the first person camera.")]
-        [SerializeField] protected float m_FirstPersonFieldOfView = 30f;
+        [SerializeField] protected FloatReference m_FirstPersonFieldOfView = 30f;
         [Tooltip("The damping time of the field of view angle when changed.")]
         [SerializeField] protected float m_FirstPersonFieldOfViewDamping = 0.2f;
 
@@ -143,7 +144,7 @@ namespace Opsive.UltimateCharacterController.FirstPersonController.Camera.ViewTy
                     UpdateFirstPersonCamera(m_CharacterLocomotion.FirstPersonPerspective);
                 }
             } }
-        public float FieldOfView { get { return m_FieldOfView; } set { m_FieldOfView = value; } }
+        public float FieldOfView { get { return m_FieldOfView.Value; } set { m_FieldOfView.Value = value; } }
         public float FieldOfViewDamping { get { return m_FieldOfViewDamping; } set { m_FieldOfViewDamping = value; } }
         public Vector3 FirstPersonPositionOffset { get { return m_FirstPersonPositionOffset; }
             set

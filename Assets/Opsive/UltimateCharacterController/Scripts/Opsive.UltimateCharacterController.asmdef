@@ -1,14 +1,17 @@
 {
     "name": "Opsive.UltimateCharacterController",
+    "rootNamespace": "",
     "references": [
-        "Opsive.Shared"
+        "Opsive.Shared",
+        "AnimalController"
     ],
-    "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": []
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

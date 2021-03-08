@@ -14,6 +14,7 @@ namespace Opsive.UltimateCharacterController.Editor.Inspectors.FirstPersonContro
     using Opsive.UltimateCharacterController.FirstPersonController.Camera.ViewTypes;
     using UnityEditor;
     using UnityEngine;
+    using MalbersAnimations.Scriptables;
 
     /// <summary>
     /// Draws a custom inspector for the First Person View Type.
@@ -41,7 +42,7 @@ namespace Opsive.UltimateCharacterController.Editor.Inspectors.FirstPersonContro
                 }
                 InspectorUtility.DrawField(target, "m_LookDownOffset");
                 InspectorUtility.DrawField(target, "m_CullingMask");
-                InspectorUtility.DrawFieldSlider(target, "m_FieldOfView", 1, 179);
+                InspectorUtility.DrawField(target, "m_FieldOfView");
                 InspectorUtility.DrawFieldSlider(target, "m_FieldOfViewDamping", 0, 5);
 #if ULTIMATE_CHARACTER_CONTROLLER_LWRP || ULTIMATE_CHARACTER_CONTROLLER_UNIVERSALRP
                 var prevRenderType = InspectorUtility.GetFieldValue<FirstPerson.ObjectOverlayRenderType>(target, "m_OverlayRenderType");

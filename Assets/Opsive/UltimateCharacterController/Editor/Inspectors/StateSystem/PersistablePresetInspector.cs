@@ -16,6 +16,7 @@ namespace Opsive.UltimateCharacterController.Editor.Inspectors.StateSystem
     using System.Collections.Generic;
     using UnityEditor;
     using UnityEngine;
+    using MalbersAnimations.Scriptables;
 
     /// <summary>
     /// Contains all of the editor logic for presets. A preset is a set of presaved values that can be applied at runtime.
