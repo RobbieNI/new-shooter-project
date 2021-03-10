@@ -29,12 +29,15 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         [SerializeField] protected float m_SpeedParameter = 2;
         [Tooltip("Does the ability require movement in order to stay active?")]
         [SerializeField] protected bool m_RequireMovement = true;
+        [Tooltip("Can the HeightChange ability run while the SpeedChange ability is active?")]
+        [SerializeField] protected bool m_AllowHeightChange;
 
         public float SpeedChangeMultiplier { get { return m_SpeedChangeMultiplier; } set { m_SpeedChangeMultiplier = value; } }
         public float MinSpeedChangeValue { get { return m_MinSpeedChangeValue; } set { m_MinSpeedChangeValue = value; } }
         public float MaxSpeedChangeValue { get { return m_MaxSpeedChangeValue; } set { m_MaxSpeedChangeValue = value; } }
         public float SpeedParameter { get { return m_SpeedParameter; } set { m_SpeedParameter = value; } }
         public bool RequireMovement { get { return m_RequireMovement; } set { m_RequireMovement = value; } }
+        public bool AllowHeightChange { get { return m_AllowHeightChange; } set { m_AllowHeightChange = value; } }
 
         public override bool IsConcurrent { get { return true; } }
 
@@ -105,5 +108,22 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
 
             SetSpeedParameter(0);
         }
+
+        public override bool ShouldStopActiveAbility(Ability activeAbility)
+        {
+            return (activeAbility is HeightChange);
+        }
+
+        /// <summary>
+        /// Called when another ability is attempting to start and the current ability is active.
+        /// Returns true or false depending on if the new ability should be blocked from starting.
+        /// </summary>
+        /// <param name="startingAbility">The ability that is starting.</param>
+        /// <returns>True if the ability should be blocked.</returns>
+        public override bool ShouldBlockAbilityStart(Ability startingAbility)
+        {
+            return (!m_AllowHeightChange && startingAbility is HeightChange) || startingAbility is StoredInputAbilityBase;
+        }
+
     }
 }

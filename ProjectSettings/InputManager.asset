@@ -921,8 +921,8 @@ InputManager:
     m_Name: Lean
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: x
-    positiveButton: z
+    negativeButton: e
+    positiveButton: q
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -1004,7 +1004,7 @@ InputManager:
     negativeButton: 
     positiveButton: g
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: joystick button 1
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
