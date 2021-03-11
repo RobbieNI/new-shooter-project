@@ -4,8 +4,7 @@
     "references": [
         "Opsive.UltimateCharacterController",
         "Opsive.Shared",
-        "Opsive.Shared.Editor",
-        "AnimalController"
+        "Opsive.Shared.Editor"
     ],
     "includePlatforms": [
         "Editor"

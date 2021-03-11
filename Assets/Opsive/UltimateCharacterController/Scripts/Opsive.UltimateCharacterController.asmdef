@@ -2,8 +2,7 @@
     "name": "Opsive.UltimateCharacterController",
     "rootNamespace": "",
     "references": [
-        "Opsive.Shared",
-        "AnimalController"
+        "Opsive.Shared"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

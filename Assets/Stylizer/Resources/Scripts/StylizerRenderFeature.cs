@@ -136,21 +136,21 @@ public class StylizerRenderFeature : ScriptableRendererFeature
             context.materialFactory = stylizer.m_MaterialFactory;
             context.camera = cam;
 #if UNITY_EDITOR
-			var uberMaterial = stylizer.m_MaterialFactory.Get("Hidden/Post FX/Uber Shader_Grain");
+			// var uberMaterial = stylizer.m_MaterialFactory.Get("Hidden/Post FX/Uber Shader_Grain");
 #else
-			var uberMaterial = ub;
+			// var uberMaterial = ub;
 #endif
-            uberMaterial.shaderKeywords = null;
+            // uberMaterial.shaderKeywords = null;
 
 			Texture autoExposure = GU.whiteTexture;
-			uberMaterial.SetTexture("_AutoExposure", autoExposure);
+			// uberMaterial.SetTexture("_AutoExposure", autoExposure);
 
 
 			stylizer.m_Grain.Init(context,profile.grain);
 
-			TryPrepareUberImageEffect(stylizer.m_Grain, uberMaterial);
+			// TryPrepareUberImageEffect(stylizer.m_Grain, uberMaterial);
 
-			cmd.Blit(source, destination, uberMaterial, 0);
+			// cmd.Blit(source, destination, uberMaterial, 0);
 
 		 	stylizer.m_RenderTextureFactory.ReleaseAll();
 
@@ -170,18 +170,18 @@ public class StylizerRenderFeature : ScriptableRendererFeature
             context.materialFactory = stylizer.m_MaterialFactory;
             context.camera = cam;
 #if UNITY_EDITOR
-			var uberMaterial = stylizer.m_MaterialFactory.Get("Hidden/Post FX/Uber Shader_Grain");
+			// var uberMaterial = stylizer.m_MaterialFactory.Get("Hidden/Post FX/Uber Shader_Grain");
 #else
-			var uberMaterial = ub;
+			// var uberMaterial = ub;
 #endif
-            uberMaterial.shaderKeywords = null;
+            // uberMaterial.shaderKeywords = null;
 
 			Texture autoExposure = GU.whiteTexture;
-			uberMaterial.SetTexture("_AutoExposure", autoExposure);
+			// uberMaterial.SetTexture("_AutoExposure", autoExposure);
 
 			stylizer.m_Grain.Init(context,profile.grain);
 
-			TryPrepareUberImageEffect(stylizer.m_Grain, uberMaterial);
+			// TryPrepareUberImageEffect(stylizer.m_Grain, uberMaterial);
 
             Palette palette = stylizer.Palette;
             Pattern pattern = stylizer.Pattern;
@@ -214,7 +214,7 @@ public class StylizerRenderFeature : ScriptableRendererFeature
             cmd.GetTemporaryRT(grainTemp, cam.pixelWidth, cam.pixelHeight, 0, FilterMode.Point, RenderTextureFormat.Default);
 
             //Dither
-            cmd.Blit(source, ditherTemp, uberMaterial, 0);
+            // cmd.Blit(source, ditherTemp, uberMaterial, 0);
             
             //Grain
             cmd.Blit(ditherTemp, grainTemp, material);

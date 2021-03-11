@@ -14,7 +14,6 @@ namespace Opsive.UltimateCharacterController.Editor.Inspectors.FirstPersonContro
     using Opsive.UltimateCharacterController.FirstPersonController.Camera.ViewTypes;
     using UnityEditor;
     using UnityEngine;
-    using MalbersAnimations.Scriptables;
 
     /// <summary>
     /// Draws a custom inspector for the First Person View Type.
