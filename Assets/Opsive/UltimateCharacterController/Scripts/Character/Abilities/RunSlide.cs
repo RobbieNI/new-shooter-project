@@ -12,7 +12,7 @@ public class RunSlide : Ability
     [SerializeField] protected float m_StartCastDistance = 2;
 
     [Tooltip("Specifies the speed of the slide.")]
-    [SerializeField] protected float m_slideSpeed = 10;
+    [SerializeField] protected float m_slideSpeed = 50;
 
     [Tooltip("Do we only want this ability to be active when the Speed Change Ability is active? If false then use a different key binding than crouch.")]
     [SerializeField] protected bool m_OnlySlideWhenSprinting;

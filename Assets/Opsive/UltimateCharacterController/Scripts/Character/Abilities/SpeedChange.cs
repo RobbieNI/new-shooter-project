@@ -111,7 +111,7 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
 
         public override bool ShouldStopActiveAbility(Ability activeAbility)
         {
-            return (activeAbility is HeightChange);
+            return (activeAbility is HeightChange) || (activeAbility is Prone);
         }
 
         /// <summary>

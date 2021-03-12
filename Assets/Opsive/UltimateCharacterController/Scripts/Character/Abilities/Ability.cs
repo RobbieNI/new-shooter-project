@@ -203,7 +203,6 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
 #if UNITY_EDITOR
         public string InspectorDescription { get { return m_InspectorDescription; } set { m_InspectorDescription = value; } }
 #endif
-
         protected UltimateCharacterLocomotion m_CharacterLocomotion;
         protected GameObject m_GameObject;
         protected Transform m_Transform;
